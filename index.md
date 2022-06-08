@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html>
 
-You can use the [editor on GitHub](https://github.com/kelly-o35/PIT-UN-Drafts/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<body>
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, ‘TAB 1’)">TAB 1</button>
+  <button class="tablinks" onclick="openTab(event, ’TAB 2’)">TAB 2</button>
+  <button class="tablinks" onclick="openTab(event, ‘TAB 3’)">TAB 3</button>
+</div>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<!-- Tab content -->
+<div id="TAB 1" class="tabcontent">
+  <h3>TAB 1 header </h3>
+  <p> TAB 1 content here </p>
+</div>
 
-### Markdown
+<div id="TAB 2" class="tabcontent">
+  <h3>TAB 2</h3>
+  <p> TAB 2 content here </p>
+</div>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<div id="TAB 3" class="tabcontent">
+  <h3>TAB 3</h3>
+  <p>TAB 3 content here </p>
+</div>
+  
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
 
-```markdown
-Syntax highlighted code block
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+	tabcontent[i].style.display = "none";
+  }
 
-# Header 1
-## Header 2
-### Header 3
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+	tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kelly-o35/PIT-UN-Drafts/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+  </script>
+</body>
+  
+</html>
